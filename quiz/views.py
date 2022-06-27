@@ -2,6 +2,7 @@ from rest_framework import generics
 from django.shortcuts import render
 from .models import Category, Question, Quiz
 from .serializers import CategorySerializer, CategoryDetailSerializer, QuestionSerializer
+from .pagination import SmallPageNumberPagination
 
 
 class CategoryListView(generics.ListAPIView):
@@ -25,6 +26,7 @@ class CategoryDetailView(generics.ListAPIView):
 
 class QuizDetailView(generics.ListAPIView):
     serializer_class = QuestionSerializer
+    pagination_class = SmallPageNumberPagination
     
     def get_queryset(self):
         """

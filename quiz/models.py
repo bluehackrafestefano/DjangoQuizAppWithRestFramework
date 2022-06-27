@@ -41,8 +41,7 @@ class Question(models.Model):
         (0, 'Beginner'),
         (1, 'Intermediate'),
         (2, 'Advenced'),
-    )
-    
+    ) 
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     title = models.CharField(max_length=300, verbose_name='question')
     difficulty = models.IntegerField(choices=SCALE)
@@ -58,7 +57,6 @@ class Answer(models.Model):
     answer_text = models.CharField(max_length=250)
     is_right = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
-    
     updated = models.DateTimeField(auto_now=True)
     
     def __str__(self):

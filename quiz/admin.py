@@ -17,7 +17,7 @@ class QuizAdmin(nested_admin.NestedModelAdmin):
     inlines = [QuestionInline]
 
 
-admin.site.register(Quiz, QuizAdmin)
+admin.site.register(Quiz, QuizAdmin)  # Only QuizAdmin is enough
 admin.site.register(Question)
 admin.site.register(Answer)
 admin.site.register(Category)

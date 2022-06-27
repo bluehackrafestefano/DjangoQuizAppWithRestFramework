@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'quiz',
     'nested_admin',
     'user',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
 ]
 
 MIDDLEWARE = [

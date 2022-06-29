@@ -5,7 +5,7 @@ from .serializers import CategorySerializer, CategoryDetailSerializer, QuestionS
 from .pagination import SmallPageNumberPagination
 
 # Auth:
-from rest_framework.permissions import IsAuthenticated , AllowAny
+from rest_framework.permissions import IsAuthenticated, AllowAny
 
 
 class CategoryListView(generics.ListAPIView):
@@ -26,7 +26,7 @@ class CategoryDetailView(generics.ListAPIView):
         """
         queryset = Quiz.objects.all()
         category = self.kwargs['category']  # category from url e.g.: quiz/backend
-        queryset = queryset.filter(category__name=category)
+        queryset = queryset.filter(category__name__iexact=category)
         return queryset
 
 class QuizDetailView(generics.ListAPIView):
